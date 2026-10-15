@@ -1,4 +1,10 @@
+
 {
+  "name": "impanolink-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.jsx"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "bcrypt": "^6.0.0",
