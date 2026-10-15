@@ -19,12 +19,17 @@ const pool = new Pool({
 });
 
 
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "http://localhost:5175"
-  ]
+    "http://localhost:5175",
+    "https://impanolink-b79x.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(express.json({ limit: "10kb" }));
 
