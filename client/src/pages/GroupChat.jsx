@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { MessageCircle, Plus, Send, Users, RefreshCw } from "lucide-react";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://impanolink.onrender.com";
 
 export default function GroupChat() {
   const [groups, setGroups] = useState([]);
