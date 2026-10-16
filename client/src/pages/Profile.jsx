@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserRound, Camera, LogOut } from 'lucide-react'
@@ -6,10 +7,13 @@ export default function Profile() {
   const navigate = useNavigate()
 
   const user = JSON.parse(
-    sessionStorage.getItem('impanolink_user') || '{}'
+    sessionStorage.getItem('impanolink_demo_user') ||
+    localStorage.getItem('impanolink_demo_user') ||
+    sessionStorage.getItem('impanolink_user') ||
+    '{}'
   )
 
-  const storageKey = `impanolink_photo_${user.id || 'user'}`
+  const storageKey = `impanolink_photo_${user.id || user.email || 'user'}`
 
   const [photo, setPhoto] = useState(
     localStorage.getItem(storageKey) || ''
@@ -23,12 +27,12 @@ export default function Profile() {
     if (!file) return
 
     if (!file.type.startsWith('image/')) {
-      setMessage('Hitamo ifoto gusa.')
+      setMessage('Please select an image file.')
       return
     }
 
     if (file.size > 2 * 1024 * 1024) {
-      setMessage('Ifoto igomba kuba itarengeje 2 MB.')
+      setMessage('The image must be smaller than 2 MB.')
       return
     }
 
@@ -40,9 +44,9 @@ export default function Profile() {
       try {
         localStorage.setItem(storageKey, image)
         setPhoto(image)
-        setMessage('Ifoto yawe yabitswe kuri iki gikoresho.')
+        setMessage('Your photo has been saved on this device.')
       } catch {
-        setMessage('Ifoto ntiyabitswe. Gerageza ifoto ntoya.')
+        setMessage('Unable to save the photo. Try a smaller image.')
       }
     }
 
@@ -52,6 +56,9 @@ export default function Profile() {
   function handleLogout() {
     sessionStorage.removeItem('impanolink_token')
     sessionStorage.removeItem('impanolink_user')
+    sessionStorage.removeItem('impanolink_demo_logged_in')
+    sessionStorage.removeItem('impanolink_demo_user')
+
     navigate('/login', { replace: true })
   }
 
@@ -64,7 +71,7 @@ export default function Profile() {
           </h1>
 
           <p className="mt-2 text-slate-300">
-          Show who you are and the talent you have.
+            Show who you are and the talent you have.
           </p>
 
           <div className="relative mx-auto mt-8 h-36 w-36">
@@ -83,7 +90,7 @@ export default function Profile() {
             <label
               htmlFor="profile-photo"
               className="absolute bottom-0 right-0 cursor-pointer rounded-full bg-cyan-400 p-3 text-slate-950 hover:bg-cyan-300"
-              title="Shyiraho ifoto"
+              title="Upload photo"
             >
               <Camera size={22} />
             </label>
@@ -98,29 +105,29 @@ export default function Profile() {
           </div>
 
           <p className="mt-4 text-sm text-cyan-300">
-          Click the camera icon to upload a photo.
+            Click the camera icon to upload a photo.
           </p>
         </div>
 
         <div className="mt-8 space-y-4 rounded-xl bg-[#101c35] p-5">
           <div>
-            <p className="text-sm text-slate-400">Amazina</p>
+            <p className="text-sm text-slate-400">Full Name</p>
             <p className="mt-1 text-lg font-semibold">
-              {user.full_name || 'Umukoresha wa ImpanoLink'}
+              {user.full_name || user.fullName || 'ImpanoLink User'}
             </p>
           </div>
 
           <div>
             <p className="text-sm text-slate-400">Email</p>
             <p className="mt-1 break-all">
-              {user.email || 'Nta email ibonetse'}
+              {user.email || 'No email available'}
             </p>
           </div>
 
           <div>
-            <p className="text-sm text-slate-400">Account type</p>
+            <p className="text-sm text-slate-400">Account Type</p>
             <p className="mt-1 capitalize">
-              {user.role || 'Ntabwo izwi'}
+              {user.role || 'Unknown'}
             </p>
           </div>
         </div>
@@ -133,18 +140,28 @@ export default function Profile() {
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button
+            type="button"
             onClick={() => navigate('/services')}
             className="rounded-lg bg-cyan-500 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-400"
           >
-          Explore Services
+            Explore Services
           </button>
 
           <button
+            type="button"
+            onClick={() => navigate('/chat')}
+            className="rounded-lg bg-teal-500 px-5 py-3 font-semibold text-slate-950 hover:bg-teal-400"
+          >
+            Continue to Group Chat
+          </button>
+
+          <button
+            type="button"
             onClick={handleLogout}
             className="flex items-center gap-2 rounded-lg border border-slate-500 px-5 py-3 hover:bg-slate-700"
           >
             <LogOut size={18} />
-          Log Out
+            Log Out
           </button>
         </div>
       </section>

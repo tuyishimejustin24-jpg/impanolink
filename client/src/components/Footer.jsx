@@ -8,11 +8,11 @@ export default function Footer() {
         <div>
           <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold">
             <Handshake className="text-teal-300" />
-            Impano<span className="-ml-2 text-teal-300">Link</span>
+         Impano   <span className="-ml-2 text-teal-300">Link</span>
           </Link>
           <p className="mt-3 max-w-sm text-sm leading-6 text-slate-400">
-            Skills Into Opportunities. Duhuza abantu bafite impano n'abakeneye
-            serivisi zabo.
+            Skills Into Opportunities.We connect talented people with
+             those who need their services.
           </p>
         </div>
 
@@ -28,10 +28,10 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-slate-500">
-        <span>© {new Date().getFullYear()} ImpanoLink. Byose birabitswe.</span>
+        <span>© {new Date().getFullYear()} ImpanoLink. Everything is saved.</span>
         <span className="mx-2">·</span>
         <span className="inline-flex items-center gap-1">
-          Byakozwe n'urukundo <Heart size={12} className="text-teal-300" />
+        Made with Love ❤️ <Heart size={12} className="text-teal-300" />
         </span>
       </div>
     </footer>

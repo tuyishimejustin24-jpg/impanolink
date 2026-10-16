@@ -203,7 +203,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* HERO SECTION */}
+
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -right-32 -top-20 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl" />
 
@@ -228,7 +228,7 @@ export default function Home() {
               Your talent can become an opportunity.
             </p>
 
-            {/* SEARCH FORM */}
+         
             <form
               onSubmit={handleSearch}
               className="mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white p-3 shadow-2xl shadow-black/20 sm:p-4"
@@ -282,7 +282,7 @@ export default function Home() {
          Example: Tailoring, cooking, photography, or technology.
             </p>
 
-            {/* FOUNDER BUTTON */}
+          
             <a
               href="#founder"
               className="mt-6 inline-flex items-center gap-2 rounded-xl border border-teal-300/30 bg-teal-300/10 px-5 py-3 font-semibold text-teal-300 transition hover:bg-teal-300/20"
@@ -294,7 +294,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* POPULAR SERVICES */}
+    
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -332,7 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY IMPANOLINK */}
+    
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-white/10 bg-[#1a2944] p-5">
@@ -376,18 +376,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOUNDER PROFILE */}
-      
-      {/* HOW IMPANOLINK WORKS */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-300">
             HOW IT WORKS
           </p>
-{/* 
-          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-            How ImpanoLink Works
-          </h2> */}
+
          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
          HOW IMPANOLINK WORKS
          </h2>

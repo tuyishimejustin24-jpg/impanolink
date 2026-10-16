@@ -1,3 +1,141 @@
+// import { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+
+// export default function Login() {
+//   const navigate = useNavigate();
+
+//   const [form, setForm] = useState({
+//     email: "",
+//     password: "",
+//   });
+
+//   const [error, setError] = useState("");
+//   const [loading, setLoading] = useState(false);
+
+//   function handleChange(e) {
+//     setForm({ ...form, [e.target.name]: e.target.value });
+//   }
+
+//   async function handleSubmit(e) {
+//     e.preventDefault();
+//     setError("");
+//     setLoading(true);
+
+//     try {
+//       const response = await fetch(
+//         "https://impanolink.onrender.com/api/auth/login",
+//         {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify(form),
+//         }
+//       );
+
+//       const data = await response.json();
+
+//       if (!response.ok) {
+//         throw new Error(data.error || "Login failed.");
+//       }
+
+//       sessionStorage.setItem("impanolink_token", data.token);
+//       sessionStorage.setItem(
+//         "impanolink_user",
+//         JSON.stringify(data.user)
+//       );
+
+//       navigate('/profile')
+//     } catch (err) {
+//       setError(
+//         err.message === "Failed to fetch"
+//           ? "Cannot connect to ImpanoLink server. Please try again."
+//           : err.message
+//       );
+//     } finally {
+//       setLoading(false);
+//     }
+//   }
+
+//   return (
+//     <main className="min-h-screen bg-[#101c35] px-4 py-12 text-white">
+//       <div className="mx-auto max-w-md rounded-2xl border border-slate-700 bg-[#172641] p-6 shadow-xl sm:p-8">
+//         <h1 className="mb-2 text-3xl font-bold">
+//           Welcome back
+//         </h1>
+
+//         <p className="mb-6 text-slate-300">
+//           Login to continue your ImpanoLink journey.
+//         </p>
+
+//         {error && (
+//           <p
+//             role="alert"
+//             className="mb-4 rounded-lg bg-red-950 p-3 text-red-200"
+//           >
+//             {error}
+//           </p>
+//         )}
+
+//         <form onSubmit={handleSubmit} className="space-y-4">
+//           <div>
+//             <label htmlFor="email" className="mb-1 block">
+//               Email address
+//             </label>
+//             <input
+//               id="email"
+//               name="email"
+//               type="email"
+//               value={form.email}
+//               onChange={handleChange}
+//               required
+//               autoComplete="email"
+//               placeholder="you@example.com"
+//               className="w-full rounded-lg border border-slate-600 bg-[#101c35] p-3 outline-none focus:border-cyan-400"
+//             />
+//           </div>
+
+//           <div>
+//             <label htmlFor="password" className="mb-1 block">
+//               Password
+//             </label>
+//             <input
+//               id="password"
+//               name="password"
+//               type="password"
+//               value={form.password}
+//               onChange={handleChange}
+//               required
+//               autoComplete="current-password"
+//               placeholder="Enter your password"
+//               className="w-full rounded-lg border border-slate-600 bg-[#101c35] p-3 outline-none focus:border-cyan-400"
+//             />
+//           </div>
+
+//           <button
+//             type="submit"
+//             disabled={loading}
+//             className="w-full rounded-lg bg-cyan-500 p-3 font-bold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-60"
+//           >
+//             {loading ? "Logging in..." : "Login"}
+//           </button>
+//         </form>
+
+//         <p className="mt-6 text-center text-slate-300">
+//           Don't have an account?{" "}
+//           <Link
+//             to="/register"
+//             className="font-semibold text-cyan-400 hover:underline"
+//           >
+//             Create Account
+//           </Link>
+//         </p>
+//       </div>
+//     </main>
+//   );
+// }
+
+
+
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -13,43 +151,55 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   }
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setError("");
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "https://impanolink.onrender.com/api/auth/login",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
+      
+      const savedUser = JSON.parse(
+        localStorage.getItem("impanolink_demo_user") || "null"
       );
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Login failed.");
+      if (!savedUser) {
+        setError(
+          "No demo account found. Please create an account first."
+        );
+        return;
       }
 
-      sessionStorage.setItem("impanolink_token", data.token);
+      const emailMatches =
+        savedUser.email?.toLowerCase() === form.email.trim().toLowerCase();
+
+      const passwordMatches =
+        savedUser.password === form.password;
+
+      if (!emailMatches || !passwordMatches) {
+        setError("Invalid email address or password.");
+        return;
+      }
+
+      
+      sessionStorage.setItem("impanolink_demo_logged_in", "true");
       sessionStorage.setItem(
-        "impanolink_user",
-        JSON.stringify(data.user)
+        "impanolink_demo_user",
+        JSON.stringify({
+          fullName: savedUser.fullName || savedUser.name || "",
+          email: savedUser.email,
+          role: savedUser.role || "talent",
+        })
       );
 
-      navigate('/profile')
-    } catch (err) {
-      setError(
-        err.message === "Failed to fetch"
-          ? "Cannot connect to ImpanoLink server. Please try again."
-          : err.message
-      );
+      navigate("/profile");
+    } catch {
+      setError("Unable to log in. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -59,11 +209,11 @@ export default function Login() {
     <main className="min-h-screen bg-[#101c35] px-4 py-12 text-white">
       <div className="mx-auto max-w-md rounded-2xl border border-slate-700 bg-[#172641] p-6 shadow-xl sm:p-8">
         <h1 className="mb-2 text-3xl font-bold">
-          Welcome back
+          Welcome Back
         </h1>
 
         <p className="mb-6 text-slate-300">
-          Login to continue your ImpanoLink journey.
+          Log in to continue your ImpanoLink journey.
         </p>
 
         {error && (
@@ -78,8 +228,9 @@ export default function Login() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="mb-1 block">
-              Email address
+              Email Address
             </label>
+
             <input
               id="email"
               name="email"
@@ -97,6 +248,7 @@ export default function Login() {
             <label htmlFor="password" className="mb-1 block">
               Password
             </label>
+
             <input
               id="password"
               name="password"
@@ -115,7 +267,7 @@ export default function Login() {
             disabled={loading}
             className="w-full rounded-lg bg-cyan-500 p-3 font-bold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {loading ? "Logging in..." : "Login"}
+            {loading ? "Logging In..." : "Login"}
           </button>
         </form>
 
@@ -127,6 +279,10 @@ export default function Login() {
           >
             Create Account
           </Link>
+        </p>
+
+        <p className="mt-4 text-center text-xs text-slate-400">
+          Demo mode: account information is stored only in this browser.
         </p>
       </div>
     </main>

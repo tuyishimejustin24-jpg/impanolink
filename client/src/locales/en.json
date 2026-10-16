@@ -1,0 +1,77 @@
+
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "groupChat": "Group Chat",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "language": "Language",
+    "logout": "Logout",
+    "findService": "Find a Service",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "welcome": "Welcome to ImpanoLink",
+    "headline": "Turn Your Talent Into Opportunity",
+    "description": "Connect with people who need your skills, showcase your talent, and discover new opportunities.",
+    "findTalent": "Find Talent",
+    "exploreServices": "Explore Services",
+    "howItWorksLabel": "HOW IT WORKS",
+    "howItWorksTitle": "How ImpanoLink Works",
+    "step1Title": "Create Your Profile",
+    "step1Description": "Showcase your skills, experience, and talents.",
+    "step2Title": "Discover Opportunities",
+    "step2Description": "Find people and opportunities that match your skills.",
+    "step3Title": "Connect and Grow",
+    "step3Description": "Connect with clients and turn your talent into opportunities."
+  },
+  "services": {
+    "title": "Explore Services",
+    "description": "Discover talented people and the services they offer.",
+    "search": "Search services...",
+    "location": "Enter location",
+    "allCategories": "All Categories",
+    "noResults": "No services found.",
+    "viewDetails": "View Details",
+    "contactProvider": "Contact Provider"
+  },
+  "about": {
+    "title": "About ImpanoLink",
+    "subtitle": "Your talent can shape your future.",
+    "founder": "Founder of ImpanoLink",
+    "mission": "Our Mission",
+    "missionDescription": "To connect talented people with opportunities to showcase their skills and grow."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have a question? We would love to hear from you.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message"
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "registerTitle": "Create Your Account",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "loginButton": "Login",
+    "registerButton": "Create Account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "footer": {
+    "description": "Connecting talent with opportunity.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
+  }
+}

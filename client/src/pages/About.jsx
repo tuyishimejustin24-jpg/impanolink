@@ -52,7 +52,7 @@ import FounderProfile from '../components/FounderProfile'
 export default function About() {
   return (
     <main className="min-h-screen bg-[#101c35] px-4 py-14 sm:px-6 lg:px-8">
-      {/* About ImpanoLink */}
+      
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-300">

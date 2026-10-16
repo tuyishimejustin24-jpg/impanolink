@@ -196,6 +196,7 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import GroupChat from "./pages/GroupChat";
+import StartPage from './pages/StartPage'
 
 function MainLayout() {
   const location = useLocation()
@@ -228,16 +229,7 @@ function MainLayout() {
   )
 }
 
-function StartPage() {
-  const token = sessionStorage.getItem('impanolink_token')
 
-  return (
-    <Navigate
-      to={token ? '/profile' : '/register'}
-      replace
-    />
-  )
-}
 
 function AppContent() {
   useEffect(() => {
@@ -245,45 +237,6 @@ function AppContent() {
   }, [])
 
   return (
-    // <Routes>
-
-    //   <Route path="/" element={<StartPage />} />
-    //   <Route path="/register" element={<Register />} />
-    //   <Route path="/login" element={<Login />} />
-
-    //     <Route element={<MainLayout />}>
-    //     <Route path="/profile" element={<Profile />} />
-    //     <Route path="/services" element={<Services />} />
-    //     <Route path="/about" element={<About />} />
-    //     <Route path="/contact" element={<Contact />} />
-    //     <Route path="/chat" element={<GroupChat />} />
-    //     <Route path="/home" element={<Home />} />
-    //     <Route
-
-    //       path="*"
-    //       element={
-    //         <main className="mx-auto min-h-[60vh] px-4 py-20 text-center">
-    //           <h1 className="text-3xl font-bold text-white">
-    //             Page ntibonetse (404)
-    //           </h1>
-
-    //           <p className="mt-3 text-slate-400">
-    //             Iyo page ntibaho cyangwa URL si yo.
-    //           </p>
-
-    //           <a
-    //             href="/"
-    //             className="mt-6 inline-block rounded-lg bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-600"
-    //           >
-    //             Subira ahabanza
-    //           </a>
-    //         </main>
-    //       }
-    //     />
-    //   </Route>
-    // </Routes>
-
-
     
 <Routes>
   <Route path="/" element={<StartPage />} />

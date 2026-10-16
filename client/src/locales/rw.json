@@ -1,0 +1,77 @@
+
+{
+  "navbar": {
+    "home": "Ahabanza",
+    "services": "Serivisi",
+    "groupChat": "Ikiganiro cy'Itsinda",
+    "about": "Ibyerekeye",
+    "contact": "Twandikire",
+    "login": "Kwinjira",
+    "register": "Kwiyandikisha",
+    "profile": "Umwirondoro",
+    "language": "Ururimi",
+    "logout": "Gusohoka",
+    "findService": "Shaka Serivisi",
+    "openMenu": "Fungura menu",
+    "closeMenu": "Funga menu"
+  },
+  "home": {
+    "welcome": "Murakaza neza kuri ImpanoLink",
+    "headline": "Hindura Impano Yawe Amahirwe",
+    "description": "Hura n'abakeneye ubushobozi bwawe, werekane impano yawe kandi ubone amahirwe mashya.",
+    "findTalent": "Shaka Abafite Impano",
+    "exploreServices": "Reba Serivisi",
+    "howItWorksLabel": "UKO BIKORA",
+    "howItWorksTitle": "Uko ImpanoLink Ikora",
+    "step1Title": "Kora Umwirondoro Wawe",
+    "step1Description": "Erekana ubumenyi, uburambe n'impano ufite.",
+    "step2Title": "Shaka Amahirwe",
+    "step2Description": "Shaka abantu n'amahirwe bijyanye n'ubushobozi bwawe.",
+    "step3Title": "Huza Abantu kandi Utere Imbere",
+    "step3Description": "Huza n'abakiriya uhindure impano yawe amahirwe."
+  },
+  "services": {
+    "title": "Reba Serivisi",
+    "description": "Menya abantu bafite impano na serivisi batanga.",
+    "search": "Shakisha serivisi...",
+    "location": "Andika aho uherereye",
+    "allCategories": "Ibyiciro Byose",
+    "noResults": "Nta serivisi zibonywe.",
+    "viewDetails": "Reba Ibisobanuro",
+    "contactProvider": "Vugana na Nyir'iyi Serivisi"
+  },
+  "about": {
+    "title": "Ibyerekeye ImpanoLink",
+    "subtitle": "Impano yawe ishobora kugena ejo hazaza hawe.",
+    "founder": "Uwashinze ImpanoLink",
+    "mission": "Intego Yacu",
+    "missionDescription": "Guhuza abantu bafite impano n'amahirwe yo kwerekana ubushobozi bwabo no gutera imbere."
+  },
+  "contact": {
+    "title": "Twandikire",
+    "description": "Ufite ikibazo? Twishimiye kukumva.",
+    "name": "Amazina Yuzuye",
+    "email": "Aderesi ya Email",
+    "subject": "Umutwe w'Ubutumwa",
+    "message": "Ubutumwa Bwawe",
+    "send": "Ohereza Ubutumwa"
+  },
+  "auth": {
+    "loginTitle": "Murakaza Neza",
+    "registerTitle": "Fungura Konti Yawe",
+    "fullName": "Amazina Yuzuye",
+    "email": "Aderesi ya Email",
+    "password": "Ijambo Ry'Ibanga",
+    "confirmPassword": "Emeza Ijambo Ry'Ibanga",
+    "loginButton": "Kwinjira",
+    "registerButton": "Fungura Konti",
+    "noAccount": "Ntabwo urafungura konti?",
+    "haveAccount": "Usanzwe ufite konti?"
+  },
+  "footer": {
+    "description": "Duhuza impano n'amahirwe.",
+    "quickLinks": "Aho Wahera",
+    "followUs": "Dukurikire",
+    "rights": "Uburenganzira bwose burabitswe."
+  }
+}

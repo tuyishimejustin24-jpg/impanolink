@@ -191,7 +191,7 @@ import {
   MessageCircle,
 } from 'lucide-react'
 
-// Social media icons: ntibishingira kuri lucide-react
+
 function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true">
@@ -245,18 +245,18 @@ export default function FounderProfile() {
           </span>
 
           <h2 className="mt-5 text-3xl font-bold text-white sm:text-4xl">
-            Menya uwashinze{' '}
+          Meet the Founder{' '}
             <span className="text-teal-300">ImpanoLink</span>
           </h2>
 
           <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
-            Umushinga ugamije guhuza abantu bafite impano n'abakeneye
-            serivisi zabo.
+          A platform designed to connect talented people with those
+          who need their services.
           </p>
         </div>
 
         <div className="mx-auto grid max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-[#15233d] shadow-2xl shadow-black/20 md:grid-cols-[0.85fr_1.15fr]">
-          {/* Founder photo */}
+          
           <div className="relative flex flex-col items-center justify-center bg-gradient-to-br from-[#203957] to-[#101c35] p-7 sm:p-10">
             <div className="relative flex aspect-[4/5] w-full max-w-[280px] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#243653]">
               {!imageError ? (
@@ -275,7 +275,7 @@ export default function FounderProfile() {
                     Tuyishime Thierry
                   </p>
                   <p className="mt-1 text-xs text-slate-400">
-                    Ifoto izashyirwa hano
+                Photo will be displayed here.
                   </p>
                 </div>
               )}
@@ -292,26 +292,26 @@ export default function FounderProfile() {
 
             <div className="mt-5 flex items-center gap-2 rounded-full border border-white/10 bg-[#101c35]/80 px-4 py-2 text-sm text-slate-300">
               <Lightbulb size={17} className="text-teal-300" />
-              Impano yawe, amahirwe yawe
+           Your Talent, Your Opportunity.
             </div>
           </div>
 
-          {/* Founder information */}
+          
           <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-10">
             <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-teal-300">
               <Quote size={18} />
-              Umwirondoro wanjye
+             My Profile
             </div>
 
             <h3 className="mt-5 text-2xl font-bold leading-snug text-white sm:text-3xl">
-              Ikoranabuhanga rihuza impano n'amahirwe.
+     Technology That Connects Talent with Opportunities.
             </h3>
 
             <p className="mt-5 text-sm leading-7 text-slate-300 sm:text-base">
-              Ndi Tuyishime Thierry, umuntu ukunda ikoranabuhanga no guhuza
-              abantu bafite impano babuze aho bazerekanira. Nifuza kubafasha
-              kumenyekanisha ibyo bashoboye, guhura n'abakeneye serivisi zabo
-              no kuzamura impano zabo.
+          I am Tuyishime Thierry, a technology enthusiast who is passionate about 
+          connecting talented people who lack a platform to showcase their
+          abilities. I want to help them promote their skills, connect with people who need
+          their services, and develop their talents.
             </p>
 
             <div className="mt-7 rounded-2xl border border-teal-300/20 bg-teal-300/[0.06] p-5">
@@ -320,17 +320,17 @@ export default function FounderProfile() {
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-teal-300">
-                    Impamvu nashinze ImpanoLink
+                 Why I Founded ImpanoLink
                   </p>
 
                   <p className="mt-3 text-lg font-bold leading-7 text-white">
-                    “Kugira impano ukabura aho wayerekanira kandi ushoboye.”
+                 “To have talent but no place to showcase it, even when you have the skills.”
                   </p>
 
                   <p className="mt-3 text-sm leading-6 text-slate-400">
-                    Twubatse iki gitekerezo kugira ngo abantu bafite impano
-                    babone aho bazigaragariza, bahure n'abakiriya kandi
-                    babone amahirwe yo gukoresha ubumenyi bwabo.
+                We built this platform to help talented people showcase their skills, 
+                connect with clients, and find opportunities to put
+                 their abilities to work.
                   </p>
                 </div>
               </div>
@@ -339,7 +339,7 @@ export default function FounderProfile() {
             {/* Social media links */}
             <div className="mt-7">
               <p className="mb-3 text-sm font-semibold text-slate-300">
-                Nkoreho ku mbuga nkoranyambaga
+               Follow Us on Social Media
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -406,7 +406,7 @@ export default function FounderProfile() {
               href="/services"
               className="mt-7 inline-flex w-fit items-center gap-2 rounded-xl bg-teal-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-teal-300"
             >
-              Menya serivisi zacu
+             Discover Our Services
               <ArrowUpRight size={18} />
             </a>
           </div>
